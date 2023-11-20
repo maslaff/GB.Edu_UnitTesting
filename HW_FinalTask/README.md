@@ -21,7 +21,7 @@ b. Сравнивает эти средние значения и выводит
 $ pytest --cov
 =============================================================== test session starts ===============================================================
 platform linux -- Python 3.10.6, pytest-7.4.3, pluggy-1.3.0
-rootdir: /home/we/projects/gb_education/UnitTesting/final_task
+rootdir: /home/user/projects/gb_education/UnitTesting/final_task
 plugins: cov-4.1.0
 collected 5 items                                                                                                                                 
 
