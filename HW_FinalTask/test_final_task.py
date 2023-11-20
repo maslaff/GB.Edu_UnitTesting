@@ -19,6 +19,8 @@ b. Сравнивает эти средние значения и выводит
 
 from contextlib import redirect_stdout
 import io
+import pytest
+
 from final_task import ListsCompare
 
 class TestListCompare:
@@ -45,3 +47,13 @@ class TestListCompare:
         '''Test for compare_lists_avg where both lists equal'''
         s = self.__compare([0, 1, 2, 4, 8], [3, 5, 6, 0, 1])
         assert s == "Средние значения равны"
+
+    def test_compare_lists_avg_zerovalue(self):
+        '''Test for compare_lists_avg where both lists with zero values'''
+        s = self.__compare([0, 0], [0, 0, 0])
+        assert s == "Средние значения равны"
+
+    def test_compare_lists_avg_null(self):
+        '''Test for compare_lists_avg where one of lists is empty'''
+        with pytest.raises(ZeroDivisionError):
+            self.__compare([], [3, 5, 6, 0, 1])
